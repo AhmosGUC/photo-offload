@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connected Phone</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="phone.css">
+</head>
+<body class="phone-page">
+<aside id="sidebar">
+  <div class="brand">Photo Backup</div>
+  <nav><a href="/"><span>← Backup library</span></a></nav>
+
+  <div class="label">Connected phone</div>
+  <select id="device"></select>
+  <button id="connect" class="btn primary">Connect</button>
+  <p id="devhint" class="hint"></p>
+  <div id="summary" class="summary" hidden></div>
+
+  <div class="label">Backup folder</div>
+  <p id="rootpath" class="hint" style="word-break: break-all"></p>
+  <button id="pickroot" class="btn">Change folder…</button>
+
+  <div class="label">Show</div>
+  <nav id="show"></nav>
+
+  <div class="label">Type</div>
+  <nav id="kind"></nav>
+</aside>
+
+<main id="main">
+  <header id="topbar">
+    <button id="menu" class="icon" aria-label="Menu">☰</button>
+    <h1 id="title">Connected phone</h1>
+    <span id="count"></span>
+    <label class="sort">Sort
+      <select id="sort">
+        <option value="date_desc" selected>Newest first</option>
+        <option value="date_asc">Oldest first</option>
+        <option value="size_desc">Largest first</option>
+        <option value="size_asc">Smallest first</option>
+      </select>
+    </label>
+    <label class="zoom">Size <input id="zoom" type="range" min="90" max="320" step="10" value="170"></label>
+  </header>
+
+  <div id="statusbox" hidden>
+    <div id="statustext"></div>
+    <div class="bar"><div id="statusbar"></div></div>
+  </div>
+
+  <section id="grid" class="tiles"></section>
+  <div id="sentinel"></div>
+  <p id="empty" hidden></p>
+
+  <footer id="actionbar">
+    <span id="selinfo">Click photos to select them · Shift-click selects a range</span>
+    <button id="selall" class="btn">Select all</button>
+    <button id="selnone" class="btn" hidden>Clear</button>
+    <button id="import" class="btn primary" disabled>Import</button>
+  </footer>
+</main>
+
+<!-- import confirm + progress -->
+<div id="importbox" hidden>
+  <div class="panel">
+    <h2 id="ib-title"></h2>
+    <p id="ib-text"></p>
+    <div class="bar" id="ib-barwrap" hidden><div id="ib-bar"></div></div>
+    <p id="ib-detail" class="hint"></p>
+    <div class="row">
+      <button id="ib-cancel" class="btn">Cancel</button>
+      <button id="ib-go" class="btn primary">Start import</button>
+    </div>
+  </div>
+</div>
+
+<!-- big preview -->
+<div id="viewer" role="dialog" aria-modal="true" aria-label="Preview" hidden>
+  <div class="v-stage"><img id="v-img" alt=""></div>
+  <button class="icon v-close" aria-label="Close">✕</button>
+  <button class="icon v-prev" aria-label="Previous">‹</button>
+  <button class="icon v-next" aria-label="Next">›</button>
+  <div class="v-bar">
+    <div id="v-meta"></div>
+    <button id="v-select" class="pill" title="Select / unselect (S)"></button>
+  </div>
+</div>
+
+<script src="common.js"></script>
+<script src="phone.js"></script>
+</body>
+</html>
