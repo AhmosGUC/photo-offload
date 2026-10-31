@@ -28,7 +28,7 @@
 ## Quick start (desktop app)
 
 ### Use a prebuilt app
-1. Download `PhotoBackup-<version>.dmg` from **Releases**.
+1. Download `PhotoBackup-<version>.dmg` from [**Releases**](https://github.com/AhmosGUC/photo-offload/releases).
 2. Open it and drag **Photo Backup** into **Applications**.
 3. The first time you launch it, right-click the app → **Open** → **Open**. On newer macOS versions use System Settings → Privacy & Security → **Open Anyway**. You only need to do this once, because the app isn't notarized by Apple.
 4. Plug in your iPhone, unlock it, tap **Trust This Computer**, then pick a backup folder and press **Connect**.
@@ -38,7 +38,7 @@
 Requirements: macOS on Apple Silicon, Python 3.12 and [uv](https://github.com/astral-sh/uv).
 
 ```bash
-git clone <this-repo-url> photo-offload
+git clone https://github.com/AhmosGUC/photo-offload.git
 cd photo-offload
 uv venv --python 3.12
 source .venv/bin/activate
@@ -170,6 +170,6 @@ Issues and pull requests are welcome. Please read `docs/DEVELOPER_GUIDE.md` firs
 
 ## License
 
-No license has been chosen yet. Add a `LICENSE` file (for example MIT) before publishing.
+Licensed under the [GNU General Public License v3.0](LICENSE).
 
 Built on [pymobiledevice3](https://github.com/doronz88/pymobiledevice3), [FastAPI](https://fastapi.tiangolo.com/) and [pywebview](https://pywebview.flowrl.com/).
